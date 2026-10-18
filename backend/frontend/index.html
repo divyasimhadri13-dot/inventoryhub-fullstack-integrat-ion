@@ -1,0 +1,11 @@
+<!DOCTYPE html><html><body>
+<h1>InventoryHub - Full Stack Integration</h1>
+<div id="list"></div>
+<script>
+async function load(){
+ const res = await fetch('http://localhost:3000/api/inventory?page=1');
+ const json = await res.json();
+ document.getElementById('list').innerText = JSON.stringify(json,null,2);
+}
+load();
+</script></body></html>
